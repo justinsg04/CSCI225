@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund');
+
+:root {
+    --page-color: #f0f0f0;
+    --section-bg-color: #fff;
+    --text-color: #000000;
+    --highlight-color: #ff8c00;
+}
+
+body {
+    background-image: url('https://images2.alphacoders.com/134/1344763.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 50px;
+    background-color: var(--page-color);
+    font-family: 'Playwrite DE Grund';
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer; */
+    transition: all 0.3s ease;
+}
+
+p {
+    font-family: 'Playwrite DE Grund', sans-serif;
+    line-height: 1.6;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+h1:hover {
+    transform: scale(1.1);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--highlight-color);
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Sections Layout */
+div.Introduction, div.assignments, div.portfolio, div.schedule, div.address {
+    position: absolute;
+    background-color: #7BB5DC;
+    padding: 5px;
+    visibility: hidden;
+    transition: 0.3s;
+    text-align: center;
+    z-index: -1;
+}
+
+
+/* Positioning sections */
+div.Introduction{
+    text-align: center;
+    height: 0;
+    width: 25em;
+    top: 10%;
+    left: 5%;
+    visibility: visible;
+}
+
+div.assignments{
+    height: 0;
+    width: 25em;
+    top: 60%;
+    left: 5%;
+    visibility: visible;
+}
+
+div.portfolio{
+    height: 0;
+    width: 25em;
+    top: 10%;
+    left: 70%;
+    visibility: visible;
+}
+
+.portfolio ol {
+    position: absolute; /* Keeps it positioned absolutely */
+    margin-top: 57%; /* Moves it to the middle of the viewport */
+    right: 75%; /* Moves it to the middle of the viewport */
+    transform: translate(-50%, -50%); /* Centers the div based on its own size */
+    width: 100%; /* Adjust the width as needed */
+    background-color: #7BB5DC; /* Make sure the background color is set */
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Align text to the left */
+    z-index: 1;
+}
+
+.schedule table {
+    position: absolute; /* Keeps it positioned absolutely */
+    margin-top: -15em; /* Moves it to the middle of the viewport */
+    right: 30em; /* Moves it to the middle of the viewport */
+    transform: translate(-50%, -50%); 
+    width: 100%;
+    max-width: 87%;
+    border-color: transparent;
+    /* padding: 0px; */
+    text-align: center; /* Align text to the left */
+    z-index: 1;
+    background-color: #ffffff
+}
+
+div.schedule{
+    height: 0;
+    width: 25em;
+    top: 60%;
+    left: 70%;
+    visibility: visible;
+}
+
+
+div.Introduction p, div.assignments ul, div.portfolio ol, div.schedule table {
+    display: none;
+}
+
+.Introduction h1:hover + p,
+.assignments h1:hover + ul,
+.portfolio h1:hover + ol,
+.schedule h1:hover + table {
+    display: block;
+    visibility: visible;
+}
+
+/* .Introduction h1:hover ~ div, 
+.assignments h1:hover ~ div, 
+.portfolio h1:hover ~ div, 
+.schedule h1:hover ~ div {
+    visibility: visible;
+    opacity: 1;
+} */
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--highlight-color);
+    color: white;
+    text-align: center;
+    padding: 1px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid var(--highlight-color);
+    text-align: center;
+}
+
+th {
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+p::first-letter {
+    color: #ff8c00;
+    font-size: 2em;
+}
+
+/* .portfolio p:first-of-type {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+} */
