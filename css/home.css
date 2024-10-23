@@ -26,8 +26,6 @@ ul, ol {
 h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
-    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    cursor: pointer; */
     transition: all 0.3s ease;
 }
 
@@ -36,10 +34,13 @@ p {
     line-height: 1.6;
     text-align: justify;
     color: var(--text-color);
+    opacity: 1;
+    transition: all 3s ease-in-out;
 }
 
 h1:hover {
-    transform: scale(1.1);
+    transform: scale(0.2);
+    opacity: 0;
 }
 
 .navbar {
@@ -79,7 +80,7 @@ div.Introduction, div.assignments, div.portfolio, div.schedule, div.address {
     background-color: #7BB5DC;
     padding: 5px;
     visibility: hidden;
-    transition: 0.3s;
+    transition: all 2s ease-in-out;
     text-align: center;
     z-index: -1;
 }
@@ -111,28 +112,50 @@ div.portfolio{
     visibility: visible;
 }
 
+div.address{
+    height: 0;
+    width: 40em;
+    bottom: 14em;
+    left: 33em;
+    visibility: visible;
+}
+_______________
+.address address {
+    position: absolute; 
+    margin-top: 57%; 
+    right: 75%; 
+    transform: translate(-50%, -50%); 
+    width: 100%; 
+    background-color: #7BB5DC; 
+    border-bottom: #fff;
+    padding: 20px; 
+    text-align: center; 
+    z-index: 1;
+}
+
 .portfolio ol {
-    position: absolute; /* Keeps it positioned absolutely */
-    margin-top: 57%; /* Moves it to the middle of the viewport */
-    right: 75%; /* Moves it to the middle of the viewport */
-    transform: translate(-50%, -50%); /* Centers the div based on its own size */
-    width: 100%; /* Adjust the width as needed */
-    background-color: #7BB5DC; /* Make sure the background color is set */
-    padding: 20px; /* Add some padding */
-    text-align: center; /* Align text to the left */
+    position: absolute; 
+    margin-top: 42%; 
+    right: 75%; 
+    transform: translate(-50%, -50%); 
+    width: 100%; 
+    border-bottom: #fff;
+    background-color: #7BB5DC; 
+    padding: 20px; 
+    text-align: center; 
     z-index: 1;
 }
 
 .schedule table {
-    position: absolute; /* Keeps it positioned absolutely */
-    margin-top: -15em; /* Moves it to the middle of the viewport */
-    right: 30em; /* Moves it to the middle of the viewport */
+    position: absolute; 
+    margin-top: -15em; 
+    right: 30em; 
     transform: translate(-50%, -50%); 
     width: 100%;
     max-width: 87%;
     border-color: transparent;
-    /* padding: 0px; */
-    text-align: center; /* Align text to the left */
+    border-bottom: #fff;
+    text-align: center; 
     z-index: 1;
     background-color: #ffffff
 }
@@ -146,26 +169,20 @@ div.schedule{
 }
 
 
-div.Introduction p, div.assignments ul, div.portfolio ol, div.schedule table {
+
+
+div.Introduction p, div.assignments ul, div.portfolio ol, div.schedule table, div.address address{
     display: none;
 }
 
 .Introduction h1:hover + p,
 .assignments h1:hover + ul,
 .portfolio h1:hover + ol,
-.schedule h1:hover + table {
+.schedule h1:hover + table,
+.address h1:hover + address {
     display: block;
     visibility: visible;
 }
-
-/* .Introduction h1:hover ~ div, 
-.assignments h1:hover ~ div, 
-.portfolio h1:hover ~ div, 
-.schedule h1:hover ~ div {
-    visibility: visible;
-    opacity: 1;
-} */
-
 
 footer {
     position: fixed;
