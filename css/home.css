@@ -119,11 +119,11 @@ div.address{
     left: 33em;
     visibility: visible;
 }
-_______________
+
 .address address {
     position: absolute; 
-    margin-top: 57%; 
-    right: 75%; 
+    margin-top: -42%; 
+    right: -56%; 
     transform: translate(-50%, -50%); 
     width: 100%; 
     background-color: #7BB5DC; 
@@ -157,7 +157,7 @@ _______________
     border-bottom: #fff;
     text-align: center; 
     z-index: 1;
-    background-color: #ffffff
+    background-color: #ffffff;
 }
 
 div.schedule{
@@ -172,7 +172,9 @@ div.schedule{
 
 
 div.Introduction p, div.assignments ul, div.portfolio ol, div.schedule table, div.address address{
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.5s ease-out, visibility 2.5s ease-out;
 }
 
 .Introduction h1:hover + p,
@@ -180,8 +182,9 @@ div.Introduction p, div.assignments ul, div.portfolio ol, div.schedule table, di
 .portfolio h1:hover + ol,
 .schedule h1:hover + table,
 .address h1:hover + address {
-    display: block;
+    opacity: 1;
     visibility: visible;
+    transition: opacity 1.5s ease-out, visibility 2.5s ease-out;
 }
 
 footer {

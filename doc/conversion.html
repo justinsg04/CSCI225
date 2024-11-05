@@ -1,0 +1,52 @@
+<div class="practice">
+    <h1> Unit Conversion Calculator - Length </h1>
+    <p> Please enter your measurement </p>
+    <script>
+        function calculate() {
+            const input1 = document.getElementsByName('num1')[0];
+            console.log("get the first input " + input1.value);
+            const input2 = document.getElementsByName('num2')[0];
+
+            const unit1 = document.getElementById('unit1').value;
+            const unit2 = document.getElementById('unit2').value;
+
+            var a = parseFloat(input1.value);
+
+            const conversionRates = {
+                "Foot": 0.3048,
+                "Inch": 0.0254,
+                "Meter": 1,
+                "Centimeter": 0.01
+            };
+
+            var meters = a * conversionRates[unit1];
+            var convertedValue = meters / conversionRates[unit2];
+
+            input2.value = convertedValue.toFixed(2);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementsByName('num1')[0].addEventListener('blur', calculate);
+            document.getElementById('unit1').addEventListener('change', calculate);
+            document.getElementById('unit2').addEventListener('change', calculate);
+        });
+    </script>
+
+    <p> 
+        <input type="text" name="num1" />
+        <select id="unit1">
+            <option value="Foot">Foot</option>
+            <option value="Inch">Inch</option>
+            <option value="Meter">Meter</option>
+            <option value="Centimeter">Centimeter</option>
+        </select>
+        <span> = </span>
+        <input type="text" name="num2" readonly />
+        <select id="unit2">
+            <option value="Foot">Foot</option>
+            <option value="Inch">Inch</option>
+            <option value="Meter">Meter</option>
+            <option value="Centimeter">Centimeter</option>
+        </select>
+    </p>
+</div>
